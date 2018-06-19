@@ -67,7 +67,7 @@ After installing the plugin you must restart OmniDB in order to load the python
 related files. When you access OmniDB with loaded plugins you can see them by
 clicking in the plugin icon on the top right part of the screen:
 
-![](https://omnidb.org/images/screenshots/plugins/plugin_files.png)
+![](https://omnidb.org/images/screenshots/plugins/plugin_list.png)
 
 This ```test_plugin``` subscribes to a few hooks to show what the API can do. One
 of the hooks used is ```innerTabMenu``` called whenever the + tab is clicked in
