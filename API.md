@@ -6,7 +6,7 @@
 
 ## Javascript functions
 
-### activateHook(p_hook, p_function)
+- activateHook(p_hook, p_function)
 - **DESCRIPTION**: Enables a specific hook.
 - **PARAMETERS**:
   - p_hook: the name of hook to be activated.
