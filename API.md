@@ -56,6 +56,14 @@
       - **PARAMETERS**:
         - p_node: Tree node object.
 
+- p_node.createChildNode(p_text,p_expanded,p_icon,p_tag)
+  - **DESCRIPTION**: Creates a child node in the current node. This function is supposed to be called with hooks that contain p_node as parameter.
+  - **PARAMETERS**:
+    - p_text: node text.
+    - p_expanded: whether to expand the node when creating it. This is useful when creating childs of childs.
+    - p_icon: path of an image to be used in the tab title. Use together with getPluginPath() to get the correct relative path.
+    - p_tag: sets a tag for the child node. This is useful to create custom attributes that will be used to identify this node when other hooks are triggered.
+
 - callPluginFunction({ p_plugin_name, p_function_name, p_data = null, p_callback = null, p_loading = true, p_check_database_connection = true })
   - **DESCRIPTION**: Asynchronously calls a specific python function of a specific plugin (python backend).
   - **PARAMETERS**:
@@ -117,3 +125,14 @@
   - **PARAMETERS**:
     - p_properties: the properties to be displayed in the grid. This is a list of lists.
     - p_select: whether to also select the Properties tab.
+
+## Python side
+
+Plugins on the python side are implemented as user defined functions that will be called by
+the javascript API function `callPluginFunction()`. The functions are called always
+with 2 parameters:
+
+- my_python_function(p_database_object, p_data)
+  - p_database_object: OmniDB's database object that contains several attributes
+  and functions to retrieve data from the database.
+  - p_data: optional paramater to send data from the javascript side.
