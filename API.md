@@ -64,7 +64,7 @@
     - p_icon: path of an image to be used in the tab title. Use together with getPluginPath() to get the correct relative path.
     - p_tag: sets a tag for the child node. This is useful to create custom attributes that will be used to identify this node when other hooks are triggered.
 
-- callPluginFunction({ p_plugin_name, p_function_name, p_data = null, p_callback = null, p_loading = true, p_check_database_connection = true })
+- callPluginFunction({ p_plugin_name: '', p_function_name: '', p_data: null, p_callback: null, p_loading: true, p_check_database_connection: true })
   - **DESCRIPTION**: Asynchronously calls a specific python function of a specific plugin (python backend).
   - **PARAMETERS**:
     - p_plugin_name: the name of the plugin.
@@ -74,7 +74,7 @@
     - p_loading: whether to show the loading image.
     - p_check_database_connection: whether to check if the database connection is working before calling the python function.
 
-- createInnerTab({ p_name = '', p_image = '', p_select_function = null, p_before_close_function = null })
+- createInnerTab({ p_name: '', p_image: '', p_select_function: null, p_before_close_function: null })
   - **DESCRIPTION**: Creates an internal blank tab.
   - **PARAMETERS**:
     - p_name: the name of the tab.
@@ -83,7 +83,7 @@
     - p_before_close_function: function to be called before the tab is closed.
   - **RETURNS**: tab object tag.
 
-- createOuterTab({ p_name = '', p_image = '', p_select_function = null, p_before_close_function = null })
+- createOuterTab({ p_name: '', p_image: '', p_select_function: null, p_before_close_function: null })
   - **DESCRIPTION**: Creates an external blank tab.
   - **PARAMETERS**:
     - p_name: the name of the tab.
@@ -100,7 +100,7 @@
   - **DESCRIPTION**: Gets the tag of the selected external tab, allowing to store information there.
   - **RETURNS**: Selected external tab tag.
 
-- createSQLTab({ p_name = '', p_template = '', p_show_qtip = true })
+- createSQLTab({ p_name: '', p_template: '', p_show_qtip: true })
   - **DESCRIPTION**: Creates an internal Query Tab with a specific SQL passed as a parameter.
   - **PARAMETERS**:
     - p_name: the name of the tab.
@@ -114,13 +114,13 @@
 
 - showError(p_message): shows a popup with the specific error message
 
-- setDDL({ p_ddl = '', p_select = true})
+- setDDL({ p_ddl: '', p_select: true})
   - **DESCRIPTION**: Sets the content of the DDL box in the DDL tab.
   - **PARAMETERS**:
     - p_ddl: the DDL to be filled in the editor.
     - p_select: whether to also select the DDL tab.
 
-- setProperties({ p_properties = [], p_select = true})
+- setProperties({ p_properties: [], p_select: true})
   - **DESCRIPTION**: Sets the content of the Properties grid in the Properties tab.
   - **PARAMETERS**:
     - p_properties: the properties to be displayed in the grid. This is a list of lists.
