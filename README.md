@@ -43,8 +43,7 @@ Every plugin must contain the exact file structure with at least the default fil
 These files are contained in a specific folder structure that respects OmniDB's
 architecture.
 
-To install a plugin just extract its zip file to OmniDB's folder that contain the
-web application:
+To install a plugin just extract its zip file, or copy the contents of its folder if you get it from this repository, to OmniDB's folder that contain the actual application:
 
 ### OmniDB-server:
 
