@@ -43,7 +43,7 @@ Every plugin must contain the exact file structure with at least the default fil
 These files are contained in a specific folder structure that respects OmniDB's
 architecture.
 
-To install a plugin just extract its zip file, or copy the contents of its folder if you get it from this repository, to OmniDB's folder that contain the actual application:
+To install a plugin just extract its zip file, or copy the contents of its folder if you get it from this repository, to OmniDB's folder that contains the actual application:
 
 ### OmniDB-server:
 
@@ -93,8 +93,8 @@ for instance), that already contains the required folder structure, and then mod
 the core files to implement your desired features.
 
 You can use the [Plugin API](https://github.com/OmniDB/plugins/blob/master/API.md)
-as a reference to use all functions and hooks available so far, also check existing
-plugins to have an idea of how to they are used.
+as a reference on to use all functions and hooks available so far. Checking existing
+plugins to have an idea of how to they are used is also helpful.
 
 We **strongly** recommend that you install a python environment and develop your plugins
 using Django's development test server as it will be automatically restarted everytime
@@ -125,7 +125,7 @@ Python file loaded when OmniDB is started. This file contains server side custom
 functions that can be called by the javascript API and can use the database object
 passed as argument to perform queries in the database.
 
-Every plugin python function The functions is always called with 2 parameters:
+Every plugin python function is called with 2 parameters:
 
 - my_python_function(p_database_object, p_data)
   - p_database_object: OmniDB's database object that contains several attributes
