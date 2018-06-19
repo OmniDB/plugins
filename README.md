@@ -31,9 +31,14 @@ tree nodes and calling python functions in the plugin's python code.
 
 Every plugin must contain the exact file structure with at least the default files:
 
-- plugin.conf
-- plugin.py
-- plugin.js
+- plugins
+  - PLUGIN_NAME
+    - plugin.conf
+    - plugin.py
+- static
+  - plugins
+    - PLUGIN_NAME
+      - plugin.js
 
 These files are contained in a specific folder structure that respects OmniDB's
 architecture.
