@@ -119,7 +119,7 @@ is the starting point to load other client side files such as other javascript f
 libraries, css files, etc and to also subscribe to the API Hooks that will actually
 implement custom features.
 
-### plugin.js
+### plugin.py
 
 Python file loaded when OmniDB is started. This file contains server side custom
 functions that can be called by the javascript API and can use the database object
