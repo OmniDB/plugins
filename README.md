@@ -1,5 +1,9 @@
 # Plugin System
 
+- [Introduction](#introduction)
+- [Installing existing Plugins](#installing-existing-plugins)
+- [Creating Plugins](#creating-plugins)
+
 ## Introduction
 
 OmniDB 2.9 introduces the plugin system, a feature that allows users to develop and
