@@ -92,6 +92,18 @@ You can use the [Plugin API](https://github.com/OmniDB/plugins/blob/master/API.m
 as a reference to use all functions and hooks available so far, also check existing
 plugins to have an idea of how to they are used.
 
+We **strongly** recommend that you install a python environment and develop your plugins
+using Django's development test server as it will be automatically restarted everytime
+a currently loaded python file is changed.
+
+[This link](https://github.com/OmniDB/OmniDB#12--from-source) contains a description on
+how to install python and all requirements to run OmniDB. After everything is setup
+just go to the folder ```OmniDB/OmniDB``` and run:
+
+```
+python manage.py runserver
+```
+
 ### plugin.conf
 
 Configuration file that contains basic information about the plugin.
