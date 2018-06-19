@@ -82,7 +82,7 @@ menu:
 
 ## Creating Plugins
 
-[Plugin API](https://github.com/OmniDB/plugins/blob/master/API.md)
+- [Plugin API](https://github.com/OmniDB/plugins/blob/master/API.md)
 
 To create a plugin you can start with an existing sample plugin (test_plugin,
 for instance), that already contains the required folder structure, and then modify
