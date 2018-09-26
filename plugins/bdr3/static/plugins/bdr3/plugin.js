@@ -456,58 +456,59 @@ function getBDR3Properties(node) {
 
 function getBDR3Groups(node) {
 
-    node.removeChildNodes();
-    node.createChildNode('', false, getPluginPath('OmniDB') + 'images/spin.svg', null,
-        null);
+  node.removeChildNodes();
+  node.createChildNode('', false, getPluginPath('OmniDB') + 'images/spin.svg', null,
+      null);
 
-    callPluginFunction({
-      p_plugin_name: 'bdr3',
-      p_function_name: 'get_bdr_groups',
-      p_data: null,
-      p_callback: function(p_data) {
+  callPluginFunction({
+    p_plugin_name: 'bdr3',
+    p_function_name: 'get_bdr_groups',
+    p_data: null,
+    p_callback: function(p_data) {
 
-        if (node.childNodes.length > 0)
-            node.removeChildNodes();
+      if (node.childNodes.length > 0)
+          node.removeChildNodes();
 
-        node.setText('Groups (' + p_data.length +
-            ')');
+      node.setText('Groups (' + p_data.length +
+          ')');
 
-        node.tag.num_groups = p_data.length;
+      node.tag.num_groups = p_data.length;
 
-        for (i = 0; i < p_data.length; i++) {
+      for (i = 0; i < p_data.length; i++) {
 
-            v_group = node.createChildNode(p_data[i].v_name,
-                false,
-                getPluginPath('OmniDB') + 'images/replication_set.png', {
-                    type: 'bdr3_group',
-                    database: v_connTabControl.selectedTab.tag.selectedDatabase
-                }, null, null);
-            v_nodes = v_group.createChildNode('Nodes',
-                false,
-                getPluginPath('OmniDB') + 'images/node.png', {
-                    type: 'bdr3_group_node_list',
-                    database: v_connTabControl.selectedTab.tag.selectedDatabase
-                }, null);
-            v_nodes.createChildNode('', true,
-                getPluginPath('OmniDB') + 'images/spin.svg', null, null);
-            v_tables = v_group.createChildNode('Tables',
-                false,
-                getPluginPath('OmniDB') + 'images/table_multiple.png', {
-                    type: 'bdr3_group_table_list',
-                    database: v_connTabControl.selectedTab.tag.selectedDatabase
-                }, null, null, false);
-            v_tables.createChildNode('', true,
-                getPluginPath('OmniDB') + 'images/spin.svg', null, null,
-                null, false);
+          v_group = node.createChildNode(p_data[i].v_name,
+              false,
+              getPluginPath('OmniDB') + 'images/replication_set.png', {
+                  type: 'bdr3_group',
+                  database: v_connTabControl.selectedTab.tag.selectedDatabase
+              }, null, null);
+          v_nodes = v_group.createChildNode('Nodes',
+              false,
+              getPluginPath('OmniDB') + 'images/node.png', {
+                  type: 'bdr3_group_node_list',
+                  database: v_connTabControl.selectedTab.tag.selectedDatabase
+              }, null);
+          v_nodes.createChildNode('', true,
+              getPluginPath('OmniDB') + 'images/spin.svg', null, null);
+          v_tables = v_group.createChildNode('Tables',
+              false,
+              getPluginPath('OmniDB') + 'images/table_multiple.png', {
+                  type: 'bdr3_group_table_list',
+                  database: v_connTabControl.selectedTab.tag.selectedDatabase
+              }, null, null, false);
+          v_tables.createChildNode('', true,
+              getPluginPath('OmniDB') + 'images/spin.svg', null, null,
+              null, false);
 
-        }
+      }
 
-        node.drawChildNodes();
+      node.drawChildNodes();
 
-      },
-      p_loading: false,
-      p_check_database_connection: true
-    });
+    },
+    p_loading: false,
+    p_check_database_connection: true
+  });
+
 }
 
 function getBDR3GroupNodes(node) {

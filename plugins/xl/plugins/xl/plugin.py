@@ -6,20 +6,20 @@ def get_xl_version(p_database_object, p_data):
 def get_xl_templates(p_database_object, p_data):
     if 'XL' in metadata.GetXLVersion(p_database_object):
         return {
-            'xl_pause_cluster': metadata.TemplateXLPauseCluster().v_text,
-            'xl_unpause_cluster': metadata.TemplateXLUnpauseCluster().v_text,
-            'xl_clean_connection': metadata.TemplateXLCleanConnection().v_text,
-            'xl_create_group': metadata.TemplateXLCreateGroup().v_text,
-            'xl_drop_group': metadata.TemplateXLDropGroup().v_text,
-            'xl_create_node': metadata.TemplateXLCreateNode().v_text,
-            'xl_alter_node': metadata.TemplateXLAlterNode().v_text,
-            'xl_drop_node': metadata.TemplateXLDropNode().v_text,
-            'xl_execute_direct': metadata.TemplateXLExecuteDirect().v_text,
-            'xl_pool_reload': metadata.TemplateXLPoolReload().v_text,
-            'xl_altertable_distribution': metadata.TemplateXLAlterTableDistribution().v_text,
-            'xl_altertable_location': metadata.TemplateXLAlterTableLocation().v_text,
-            'xl_altertable_addnode': metadata.TemplateXLALterTableAddNode().v_text,
-            'xl_altertable_deletenode': metadata.TemplateXLAlterTableDeleteNode().v_text
+            'xl_pause_cluster': metadata.TemplateXLPauseCluster(p_database_object).v_text,
+            'xl_unpause_cluster': metadata.TemplateXLUnpauseCluster(p_database_object).v_text,
+            'xl_clean_connection': metadata.TemplateXLCleanConnection(p_database_object).v_text,
+            'xl_create_group': metadata.TemplateXLCreateGroup(p_database_object).v_text,
+            'xl_drop_group': metadata.TemplateXLDropGroup(p_database_object).v_text,
+            'xl_create_node': metadata.TemplateXLCreateNode(p_database_object).v_text,
+            'xl_alter_node': metadata.TemplateXLAlterNode(p_database_object).v_text,
+            'xl_drop_node': metadata.TemplateXLDropNode(p_database_object).v_text,
+            'xl_execute_direct': metadata.TemplateXLExecuteDirect(p_database_object).v_text,
+            'xl_pool_reload': metadata.TemplateXLPoolReload(p_database_object).v_text,
+            'xl_altertable_distribution': metadata.TemplateXLAlterTableDistribution(p_database_object).v_text,
+            'xl_altertable_location': metadata.TemplateXLAlterTableLocation(p_database_object).v_text,
+            'xl_altertable_addnode': metadata.TemplateXLALterTableAddNode(p_database_object).v_text,
+            'xl_altertable_deletenode': metadata.TemplateXLAlterTableDeleteNode(p_database_object).v_text
         }
     else:
         return {}
@@ -91,5 +91,6 @@ def get_xl_table_nodes(p_database_object, p_data):
                 'v_name': v_node['node_name']
             }
             v_list_nodes.append(v_node_data)
+        return v_list_nodes
     except Exception as exc:
         raise exc
