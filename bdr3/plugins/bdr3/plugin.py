@@ -1,29 +1,19 @@
 import OmniDB_app.plugins.bdr3.metadata as metadata
 
 def get_bdr_version(p_database_object, p_data):
-    result = metadata.GetBDRVersion(p_database_object)
-    return { 'bdr_version': result }
+    return { 'bdr_version': metadata.GetBDRVersion(p_database_object) }
 
 def get_bdr_templates(p_database_object, p_data):
-    v_create_local_node = metadata.TemplateBDRCreateLocalNode(p_database_object).v_text
-    v_promote_local_node = metadata.TemplateBDRPromoteLocalNode().v_text
-    v_create_group = metadata.TemplateBDRCreateGroup().v_text
-    v_join_group = metadata.TemplateBDRJoinGroup().v_text
-    v_join_wait = metadata.TemplateBDRJoinWait().v_text
-    v_replicate_ddl_command = metadata.TemplateBDRReplicateDDLCommand().v_text
-    v_part_node = metadata.TemplateBDRPartNode().v_text
-    v_group_add_table = metadata.TemplateBDRGroupAddTable().v_text
-    v_group_remove_table = metadata.TemplateBDRGroupRemoveTable().v_text
     return {
-        'create_local_node': v_create_local_node,
-        'promote_local_node': v_promote_local_node,
-        'create_group': v_create_group,
-        'join_group': v_join_group,
-        'join_wait': v_join_wait,
-        'replicate_ddl_command': v_replicate_ddl_command,
-        'part_node': v_part_node,
-        'group_add_table': v_group_add_table,
-        'group_remove_table': v_group_remove_table
+        'create_local_node': metadata.TemplateBDRCreateLocalNode(p_database_object).v_text,
+        'promote_local_node': metadata.TemplateBDRPromoteLocalNode().v_text,
+        'create_group': metadata.TemplateBDRCreateGroup().v_text,
+        'join_group': metadata.TemplateBDRJoinGroup().v_text,
+        'join_wait': metadata.TemplateBDRJoinWait().v_text,
+        'replicate_ddl_command': metadata.TemplateBDRReplicateDDLCommand().v_text,
+        'part_node': metadata.TemplateBDRPartNode().v_text,
+        'group_add_table': metadata.TemplateBDRGroupAddTable().v_text,
+        'group_remove_table': metadata.TemplateBDRGroupRemoveTable().v_text
     }
 
 def get_bdr_properties(p_database_object, p_data):

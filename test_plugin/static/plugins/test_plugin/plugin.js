@@ -57,7 +57,7 @@ activateHook('postgresqlTreeContextMenu',function(p_node) {
   if (p_node.tag.type == 'server') {
     return v_elements = [{
         text: 'Test',
-        icon: getPluginPath('test_plugin') + 'images/refresh.png',
+        icon: 'fas cm-all fa-sync-alt',
         action: function(node) {
           console.log(node);
         }
@@ -74,11 +74,11 @@ activateHook('postgresqlTreeNodeClick',function(p_node) {
 activateHook('innerTabMenu',function() {
   return v_elements = [{
       text: 'Test',
-      icon: getPluginPath('test_plugin') + 'images/refresh.png',
+      icon: 'fas cm-all fa-sync-alt',
       action: function() {
         var v_tab_tag = createInnerTab({
           p_name: 'test',
-          p_image: getPluginPath('test_plugin') + 'images/refresh.png',
+          p_image: 'fas cm-all fa-sync-alt',
           p_select_function: function() {
             console.log('selected')
           }
@@ -91,11 +91,11 @@ activateHook('innerTabMenu',function() {
 activateHook('outerTabMenu',function() {
   return v_elements = [{
       text: 'Test',
-      icon: getPluginPath('test_plugin') + 'images/refresh.png',
+      icon: 'fas cm-all fa-sync-alt',
       action: function() {
         var v_tab_tag = createOuterTab({
           p_name: 'test',
-          p_image: getPluginPath('test_plugin') + 'images/refresh.png'
+          p_image: 'fas cm-all fa-sync-alt'
         });
         v_tab_tag.div.innerHTML = 'test';
         var tag = getSelectedOuterTabTag();
