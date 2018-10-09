@@ -1,0 +1,19 @@
+.node-pglogical {
+  color: #af0e18;
+}
+
+.node-pglogical-server {
+  color: #344E75;
+}
+
+.node-pglogical-repset {
+  color: #e07508;
+}
+
+.node-pglogical-subscription {
+  color: #1f8e79;
+}
+
+.node-pglogical-interface {
+  color: #e8e5a4;
+}
