@@ -285,6 +285,7 @@ function refreshTreeXL(node) {
 }
 
 function startXL(node) {
+  
   callPluginFunction({
     p_plugin_name: 'xl',
     p_function_name: 'get_xl_version',
@@ -490,6 +491,7 @@ function getXLGroupNodes(node) {
 }
 
 function startXLTable(node) {
+
   callPluginFunction({
     p_plugin_name: 'xl',
     p_function_name: 'get_xl_version',
