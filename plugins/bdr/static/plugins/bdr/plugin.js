@@ -379,7 +379,6 @@ function startBDR(node) {
                       'BDR', false,
                       'node-bdr', {
                           type: 'bdr_notset',
-                          database: v_connTabControl.selectedTab.tag.selectedDatabase
                       }, null);
                   node_bdr.createChildNode('', true,
                       'node-spin', null, null);
@@ -392,7 +391,6 @@ function startBDR(node) {
                         'BDR', false,
                         'node-bdr', {
                             type: 'bdr_paused',
-                            database: v_connTabControl.selectedTab.tag.selectedDatabase
                         }, null);
                     node_bdr.createChildNode('', true,
                         'node-spin', null, null);
@@ -403,7 +401,6 @@ function startBDR(node) {
                         'BDR', false,
                         'node-bdr', {
                             type: 'bdr',
-                            database: v_connTabControl.selectedTab.tag.selectedDatabase
                         }, null);
                     node_bdr.createChildNode('', true,
                         'node-spin', null, null);
