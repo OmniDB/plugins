@@ -1,4 +1,4 @@
-import OmniDB_app.plugins.bdr.metadata as metadata
+from . import metadata as metadata
 
 def get_bdr_version(p_database_object, p_data):
     return { 'bdr_version': metadata.GetBDRVersion(p_database_object) }

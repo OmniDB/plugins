@@ -1,4 +1,4 @@
-import OmniDB_app.plugins.pglogical.metadata as metadata
+from . import metadata as metadata
 
 def get_pglogical_version(p_database_object, p_data):
     return { 'pglogical_version': metadata.GetPglogicalVersion(p_database_object) }

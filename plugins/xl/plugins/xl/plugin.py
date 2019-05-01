@@ -1,4 +1,4 @@
-import OmniDB_app.plugins.xl.metadata as metadata
+from . import metadata as metadata
 
 def get_xl_version(p_database_object, p_data):
     return { 'xl_version': metadata.GetXLVersion(p_database_object) }
