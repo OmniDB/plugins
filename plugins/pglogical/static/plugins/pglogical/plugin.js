@@ -362,6 +362,9 @@ function refreshTreePglogical(node) {
 }
 
 function startPglogical(node) {
+  var v_loading_node = node.createChildNode('', false, 'node-spin', null,
+      null);
+
   callPluginFunction({
     p_plugin_name: 'pglogical',
     p_function_name: 'get_pglogical_version',
@@ -375,38 +378,43 @@ function startPglogical(node) {
             p_data: null,
             p_callback: function(p_data) {
               pglogical_templates = p_data;
+              
+              v_loading_node.removeNode();
+
+              var node_pglogical = node.createChildNode(
+                  'pglogical', false,
+                  'fas node-all fa-sitemap node-pglogical', {
+                      type: 'pglogical',
+                  }, null);
+              var node_nodes = node_pglogical.createChildNode(
+                  'Nodes', false,
+                  'fas node-all fa-server node-pglogical-server', {
+                      type: 'pglogical_node_list',
+                  }, null);
+              node_nodes.createChildNode('', true,
+                  'node-spin', null, null);
+              var node_repsets = node_pglogical.createChildNode(
+                  'Replication Sets', false,
+                  'fas node-all fa-tasks node-pglogical-repset', {
+                      type: 'pglogical_repset_list',
+                  }, null);
+              node_repsets.createChildNode('', true,
+                  'node-spin', null, null);
+              var node_subscriptions = node_pglogical.createChildNode(
+                  'Subscriptions', false,
+                  'fas node-all fa-arrow-alt-circle-up node-pglogical-subscription', {
+                      type: 'pglogical_subscription_list',
+                  }, null);
+              node_subscriptions.createChildNode('', true,
+                  'node-spin', null, null);
             },
             p_loading: false,
             p_check_database_connection: true
           });
 
-          var node_pglogical = node.createChildNode(
-              'pglogical', false,
-              'fas node-all fa-sitemap node-pglogical', {
-                  type: 'pglogical',
-              }, null);
-          var node_nodes = node_pglogical.createChildNode(
-              'Nodes', false,
-              'fas node-all fa-server node-pglogical-server', {
-                  type: 'pglogical_node_list',
-              }, null);
-          node_nodes.createChildNode('', true,
-              'node-spin', null, null);
-          var node_repsets = node_pglogical.createChildNode(
-              'Replication Sets', false,
-              'fas node-all fa-tasks node-pglogical-repset', {
-                  type: 'pglogical_repset_list',
-              }, null);
-          node_repsets.createChildNode('', true,
-              'node-spin', null, null);
-          var node_subscriptions = node_pglogical.createChildNode(
-              'Subscriptions', false,
-              'fas node-all fa-arrow-alt-circle-up node-pglogical-subscription', {
-                  type: 'pglogical_subscription_list',
-              }, null);
-          node_subscriptions.createChildNode('', true,
-              'node-spin', null, null);
-
+      }
+      else {
+        v_loading_node.removeNode();
       }
     },
     p_loading: false,
